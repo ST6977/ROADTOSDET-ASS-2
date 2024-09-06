@@ -1,9 +1,9 @@
 const newman = require("newman");
-// require("dotenv").config({ path: "Reports/.env" });
+require("dotenv").config();
 
 newman.run(
   {
-    collection: `https://api.postman.com/collections/37980397-456826cb-9920-40b5-be05-5d921033863c?access_key=PMAT-01J73VJHRKESNCEQX7Q9845V69`,
+    collection: `https://api.postman.com/collections/37980397-456826cb-9920-40b5-be05-5d921033863c?access_key=${process.env.secretKey}`,
     // collection: require("./collection/collection.json"),
     reporters: "htmlextra",
     iterationCount: 1,
